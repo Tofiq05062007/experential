@@ -1,0 +1,72 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #fffde7;
+    color: #333333;
+}
+
+
+header h1 {
+    text-align: center;
+    color: #ff5722;
+}
+
+
+nav {
+    text-align: center;
+    margin: 10px;
+}
+
+nav a {
+    margin-right: 10px;
+    color: #009688;
+    text-decoration: none;
+}
+
+
+section {
+    margin: 20px;
+}
+
+section h2 {
+    color: #795548;
+}
+
+
+#home {
+    text-align: center;
+}
+
+#gallery img {
+    width: 200px;
+    margin: 5px;
+}
+
+
+table {
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #333;
+    padding: 6px 10px;
+}
+
+#contact a {
+    color: #009688;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 10px;
+}
