@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photography Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <img src="logo.png" alt="Site Logo" class="site-logo">
+        <h1>Photography Portfolio</h1>
+    </div>
+</header>
+
+<nav>
+    <a href="#home">Home</a> |
+    <a href="#gallery">Gallery</a> |
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome</h2>
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&auto=format&fit=crop" alt="Banner Image">
+    <p style="max-width: 750px; margin: 25px auto 0; color: var(--text-muted);">
+        A curated collection of rivers, trees, and wildlife moments captured around Saoner and nearby landscapes.
+        Scroll down to explore different types of photography and discover the stories behind each frame.
+    </p>
+</section>
+
+<section id="gallery">
+    <h2>Gallery</h2>
+    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&auto=format&fit=crop" alt="Rivers Photo">
+    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&auto=format&fit=crop" alt="Trees Photo">
+    <img src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=400&auto=format&fit=crop" alt="Wildlife Photo">
+    <img src="https://images.unsplash.com/photo-1543877087-ebf71fde2be1?w=400&auto=format&fit=crop" alt="Rivers Photo">
+    <img src="https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=400&auto=format&fit=crop" alt="Trees Photo">
+    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&auto=format&fit=crop" alt="Wildlife Photo">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&auto=format&fit=crop" alt="Rivers Photo">
+    <img src="https://images.unsplash.com/photo-1440581572325-0bea30075d9d?w=400&auto=format&fit=crop" alt="Trees Photo">
+    <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=400&auto=format&fit=crop" alt="Wildlife Photo">
+</section>
+
+<section>
+    <h2>Types of Photography</h2>
+    <ul>
+        <li>Rivers</li>
+        <li>Trees</li>
+        <li>Wildlife</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Photo Categories</h2>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Rivers</td>
+            <td>Beautiful flowing rivers and water scenes</td>
+        </tr>
+        <tr>
+            <td>Trees</td>
+            <td>Forests, plants and natural landscapes</td>
+        </tr>
+        <tr>
+            <td>Wildlife</td>
+            <td>Animals in their natural habitat</td>
+        </tr>
+    </table>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>
+        Email:
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tofiqs.cse25@sbjit.edu.in&su=Photography%20Inquiry&body=Hi%20Tofiq,%0D%0A%0D%0AI%20would%20like%20to%20know%20more%20about%20your%20photography%20around%20Saoner."
+           target="_blank">
+            tofiqs.cse25@sbjit.edu.in
+        </a>
+    </p>
+    <p>
+        Location: Saoner, Maharashtra
+    </p>
+
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7478.801585916829!2d78.9095!3d21.3851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bb3d90c835c1%3A0x8e195bc2bfe69b21!2sSaoner%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000003"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <p style="margin-top: 18px;">
+        <a href="https://www.google.com/maps/search/?api=1&query=Saoner%2C+Maharashtra" target="_blank">
+            Open in Google Maps
+        </a> |
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Saoner%2C+Maharashtra" target="_blank">
+            Get Directions
+        </a>
+    </p>
+
+    <div class="quote-box" id="quoteBox">
+        <span id="quoteText">Loading photography quote...</span>
+        <div class="quote-author" id="quoteAuthor"></div>
+    </div>
+</section>
+
+<footer>
+    <p>2026 Portfolio</p>
+</footer>
+
+<script>
+const quoteApiUrl = 'https://api.quotable.io/random?tags=inspirational';
+
+fetch(quoteApiUrl)
+    .then(response => response.json())
+    .then(data => {
+        const quoteTextEl = document.getElementById('quoteText');
+        const quoteAuthorEl = document.getElementById('quoteAuthor');
+
+        if (!data || !data.content) {
+            quoteTextEl.textContent = 'Every photograph has a story to tell.';
+            quoteAuthorEl.textContent = '— Unknown';
+            return;
+        }
+
+        quoteTextEl.textContent = data.content;
+        quoteAuthorEl.textContent = data.author ? '— ' + data.author : '— Unknown';
+    })
+    .catch(() => {
+        const quoteTextEl = document.getElementById('quoteText');
+        const quoteAuthorEl = document.getElementById('quoteAuthor');
+        quoteTextEl.textContent = 'Photography is the story I fail to put into words.';
+        quoteAuthorEl.textContent = '— Destin Sparks';
+    });
+</script>
+
+</body>
+</html>
